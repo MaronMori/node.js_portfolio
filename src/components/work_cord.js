@@ -10,7 +10,7 @@ export const Work_card = () => {
                         <h5 className="card-title">Pizza Ordering Website</h5>
                         <p className="card-text">This application is a pizza ordering site, created in Python using the Django framework in the Linkedin Learning course.</p>
                         <div className="text-center">
-                            <a href="https://github.com/MaronMori/nandiasgarden-project/tree/main" className="btn btn-primary btn-outline-success" style={{backgroundColor: "#092635"}}>Github</a>
+                            <a href="https://github.com/MaronMori/nandiasgarden-project/tree/main" className="btn btn-primary btn-outline-success" style={{backgroundColor: "#092635"}} target="_blank">Github</a>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@ export const Work_card = () => {
                         <p className="card-text">This application is a simple To Do List web
                             application by Python with Django.</p>
                         <div className="text-center">
-                            <a href="https://github.com/MaronMori/todolist/tree/main"  className="btn btn-primary btn-outline-success" style={{backgroundColor: "#092635"}}>Github</a>
+                            <a href="https://github.com/MaronMori/todolist/tree/main"  className="btn btn-primary btn-outline-success" style={{backgroundColor: "#092635"}} target="_blank">Github</a>
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ export const Work_card = () => {
                         <h5 className="card-title">Web Scraping Application on Japanese Website</h5>
                         <p className="card-text">This application corrects specific information from Japanese real state website such as rent, address, age of house. These information are written in css file.</p>
                         <div className="text-center">
-                            <a href="https://github.com/MaronMori/scrapingproperty"  className="btn btn-primary btn-outline-success" style={{backgroundColor: "#092635"}}>Github</a>
+                            <a href="https://github.com/MaronMori/scrapingproperty"  className="btn btn-primary btn-outline-success" style={{backgroundColor: "#092635"}} target="_blank">Github</a>
                         </div>
                     </div>
                 </div>

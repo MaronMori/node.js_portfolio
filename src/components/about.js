@@ -32,7 +32,7 @@ export default function Bio_section () {
 
                 </div>
                 <div className="col-md-6 d-flex" >
-                    <img className="img-fluid ps-5 ms-5 my-5" style={{ maxWidth: '400px'}} src="/mypic/E19530FE-44EA-49D8-B974-EB5F5A2D2DC1.JPG" alt="Ryoga Mori"/>
+                    <img className="img-fluid ps-5 ms-5 my-5 " style={{ maxWidth: '400px'}} src="/mypic/E19530FE-44EA-49D8-B974-EB5F5A2D2DC1.JPG" alt="Ryoga Mori"/>
                 </div>
             </div>
         </div>
