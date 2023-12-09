@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import {Card, Col, Row} from "react-bootstrap";
 import NavigationBar from "../components/Navbar";
 import Bio_section from "@/components/about";
 import Work from "@/components/Work";
@@ -9,9 +7,9 @@ import {Footer} from "@/components/footer";
 
 export default function Home() {
   return (
-        <main className="main">
+        <main className="main" style={{backgroundColor: "rgb(9, 38, 53)"}}>
             <NavigationBar/>
-            <Bio_section/>
+            <Bio_section />
             <Work/>
             <Awards/>
             <Skill_and_contact/>
