@@ -3,6 +3,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './globals.css'
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 
 
 export const metadata = {
@@ -10,10 +11,14 @@ export const metadata = {
   description: "This is Ryoga Mori's portfolio website.",
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({children}) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+      <html lang="en">
+        <body>
+        <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
+            {children}
+        </ReCaptchaProvider>
+        </body>
+      </html>
   )
 }

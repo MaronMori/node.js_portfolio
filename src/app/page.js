@@ -9,6 +9,9 @@ import {Footer} from "@/components/footer";
 import {HeaderMenu} from "@/components/menu_header";
 import {Button} from "@mui/material";
 import {useRouter} from "next/navigation";
+import {Skills} from "@/components/skills/skills";
+import {History} from "@/components/history/history";
+import {Contact} from "@/components/contact/contact";
 
 export default function Home() {
     const router = useRouter()
@@ -21,8 +24,11 @@ export default function Home() {
             <Button variant={"outlined"} onClick={() => router.push("/submit_work")}>Publish Work</Button>
             <Bio_section />
             <Work/>
-            <Awards/>
-            <Skill_and_contact/>
+            <div className={"md:flex space-y-3 md:space-y-0 md:space-x-3 my-8 mx-8 "}>
+                <Skills />
+                <History />
+            </div>
+            <Contact />
             <Footer/>
         </main>
 
