@@ -1,54 +1,80 @@
 "use client"
 
-import { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import {IconButton, Menu, MenuItem} from "@mui/material";
+import {useState} from "react";
 
 export const HeaderMenu = () =>  {
-    const [anchorEl, setAnchorEl] = useState(null);
-
-    const handleMenu = (event) => {
-        setAnchorEl(event.currentTarget);
+    const [ anchorEl, setAnchorRl ] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (e) => {
+        setAnchorRl(e.currentTarget);
     };
-
     const handleClose = () => {
-        setAnchorEl(null);
-    };
+        setAnchorRl(null)
+    }
+    const options = [
+        "Home",
+        "Project",
+        "Background",
+        "Contact"
+    ]
 
     return (
-        <AppBar position="static">
-            <Toolbar>
-                <IconButton
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    onClick={handleMenu}
-                >
-                    <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" style={{ flexGrow: 1 }}>
-                    My Website
-                </Typography>
-                <Menu
-                    id="menu-appbar"
-                    anchorEl={anchorEl}
-                    anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                    }}
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    <MenuItem onClick={handleClose}>Home</MenuItem>
-                    <MenuItem onClick={handleClose}>About</MenuItem>
-                    <MenuItem onClick={handleClose}>Contact</MenuItem>
-                </Menu>
-            </Toolbar>
-        </AppBar>
+        <header className={"fixed w-full z-20"} style={{ backgroundColor: "#79C4F2"}}>
+            <nav className={""}>
+                <div className={"md:hidden"}>
+                    <IconButton className={"ml-2"} size={"large"} aria-label={"menu"} aria-controls={open ? 'long-menu' : undefined}
+                                aria-expanded={open ? 'true' : undefined}
+                                aria-haspopup="true"
+                                onClick={handleClick}>
+                        <MenuIcon />
+                    </IconButton>
+                    <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                        {options.map((option) => (
+                            <MenuItem key={option} onClick={handleClose}>
+                                <a href={"#" + option.toLowerCase()}>
+                                    {option}
+                                </a>
+                            </MenuItem>
+                        ))}
+                    </Menu>
+                </div>
+                <ul className={"hidden md:flex justify-between py-3 pr-20 "} style={{ paddingLeft: "50%"}}>
+                    {options.map((option) => (
+                        <li className={"header-items"} key={option}>
+                            <a className={"relative header-menu"} href={"#" + option.toLowerCase()}>{option}</a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+            <style jsx>
+                {`
+                .header-items:hover {
+                  opacity: 0.7;
+                }
+                .header-menu {
+                  font-size: large;
+                }
+                .header-menu::after {
+                  position: absolute;
+                  left: 0;
+                  content: "";
+                  width: 100%;
+                  height: 2px;
+                  background: #000000;
+                  bottom: -6px;
+                  opacity: 0;
+                  visibility: hidden;
+                  transition: 0.3s;
+                }
+                .header-menu:hover::after{
+                  visibility: visible;
+                  bottom: -2px;
+                  opacity: 1;
+                }
+                `}
+            </style>
+        </header>
     );
 }

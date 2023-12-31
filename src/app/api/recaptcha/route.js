@@ -20,7 +20,4 @@ export const POST = async (req) => {
         console.log(error);
         NextResponse.json({error: "サーバーエラー"})
     }
-
-
-
 }

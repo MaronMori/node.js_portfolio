@@ -26,20 +26,20 @@ export const Work = () =>  {
     }, []);
 
     return (
-        <div id={"work"} className="pt-3">
-            <Divider className={"mx-20 mb-8"}>
-                <Typography variant={"h3"}>My Projects</Typography>
+        <div id={"project"} className="py-12" style={{ backgroundColor: "#2c7ce6"}}>
+            <Divider className={"mx-3 md:mx-20 mb-8"} >
+                <Typography className={"text-3xl md:text-5xl"}>My Projects</Typography>
             </Divider>
             <Grid container spacing={3} justifyContent={"center"}>
                 {dataList && dataList.map((data, index) => (
-                    <Grid item key={index} className={""}>
+                    <Grid item key={index} className={"mx-6 md:mx-0"}>
                         <CardActionArea>
-                            <Card sx={{maxWidth: 345, height: 350}} className={""}>
+                            <Card sx={{maxWidth: 345, height: 350}} className={""} style={{ backgroundColor: "#042959"}}>
                                 <CardMedia className={"object-fill h-52 w-full"} component={"img"} image={data.picture}
                                            title={data.title}/>
                                 <CardContent >
-                                    <h4 className={"font-bold text-xl title-limit"}>{data.title}</h4>
-                                    <p className={"text-limit "}>{data.description}</p>
+                                    <h4 className={"font-bold text-xl title-limit"} style={{ color: "white"}}>{data.title}</h4>
+                                    <p className={"text-limit "}  style={{ color: "white"}}>{data.description}</p>
                                 </CardContent>
                             </Card>
                         </CardActionArea>

@@ -3,7 +3,7 @@ export const education_history_list = [
         date: "January/2023",
         title: "Start to study Computer Science at George Brown College",
         degree: "Diploma",
-        local: "Canada, Toronto",
+        location: "Canada, Toronto",
         detail: "Completed the English requirement and enrolled in the Computer Science department. Study Web Development," +
             "Python, TCP/IP, Linux, Windows server, Network Infrastructure. GPA 3.9"
     },
@@ -11,7 +11,7 @@ export const education_history_list = [
         date: "September/2022",
         title: "Start studying abroad and enroll at George Brown College",
         degree: "Certificate of English",
-        local: "Canada, Toronto",
+        location: "Canada, Toronto",
         detail: "Finally, started studying abroad in Canada. Learned English at an English language school for " +
             "the first few months."
     },
