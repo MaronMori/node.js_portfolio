@@ -1,6 +1,8 @@
 import {Button} from "@mui/material";
+import {useRouter} from "next/navigation";
 
 export const Footer = () => {
+    const router = useRouter()
     const year = new Date().getFullYear(); // 現在の年を取得
 
     return (
