@@ -9,6 +9,7 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
 
   ],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
     extend: {
       height: {

@@ -31,41 +31,43 @@ export const History = () => {
                         }
                     )}
                 </div>
-                <Timeline position={"alternate"} className={"hidden md:flex"}>
-                    <h3 className={"text-center"}>Now</h3>
-                    <TimelineItem>
-                        <TimelineSeparator>
-                            <TimelineDot />
-                            <TimelineConnector />
-                        </TimelineSeparator>
-                        <TimelineContent />
-                    </TimelineItem>
-                    {education_history_list.map((history, index) => {
-                        return (
-                            <TimelineItem key={index} className={"w-full"}>
-                                <TimelineOppositeContent variant={"body2"} color="text.secondary">
-                                    {history.date}
-                                </TimelineOppositeContent>
-                                <TimelineSeparator>
-                                    <TimelineDot/>
-                                    <TimelineConnector/>
-                                </TimelineSeparator>
-                                <TimelineContent>
-                                    <Paper elevation={2} className={"p-3 text-left flex-shrink"} >
-                                        <Typography variant={"subtitle2"}>{history.title}</Typography>
-                                        <Typography variant={"caption"}>{history.detail}</Typography>
-                                    </Paper>
-                                </TimelineContent>
-                            </TimelineItem>)
-                    })}
-                    <TimelineItem >
-                        <TimelineSeparator>
-                            <TimelineDot />
-                        </TimelineSeparator>
-                        <TimelineContent />
-                    </TimelineItem>
-                    <h3 className={"text-center"}>Past</h3>
-                </Timeline>
+                <div className={"hidden md:flex"}>
+                    <Timeline position={"alternate"}>
+                        <h3 className={"text-center"}>Now</h3>
+                        <TimelineItem>
+                            <TimelineSeparator>
+                                <TimelineDot />
+                                <TimelineConnector />
+                            </TimelineSeparator>
+                            <TimelineContent />
+                        </TimelineItem>
+                        {education_history_list.map((history, index) => {
+                            return (
+                                <TimelineItem key={index} className={"w-full"}>
+                                    <TimelineOppositeContent variant={"body2"} color="text.secondary">
+                                        {history.date}
+                                    </TimelineOppositeContent>
+                                    <TimelineSeparator>
+                                        <TimelineDot/>
+                                        <TimelineConnector/>
+                                    </TimelineSeparator>
+                                    <TimelineContent>
+                                        <Paper elevation={2} className={"p-3 text-left flex-shrink"} >
+                                            <Typography variant={"subtitle2"}>{history.title}</Typography>
+                                            <Typography variant={"caption"}>{history.detail}</Typography>
+                                        </Paper>
+                                    </TimelineContent>
+                                </TimelineItem>)
+                        })}
+                        <TimelineItem >
+                            <TimelineSeparator>
+                                <TimelineDot />
+                            </TimelineSeparator>
+                            <TimelineContent />
+                        </TimelineItem>
+                        <h3 className={"text-center"}>Past</h3>
+                    </Timeline>
+                </div>
             </div>
             <style jsx>
                 {`

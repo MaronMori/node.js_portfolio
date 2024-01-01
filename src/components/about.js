@@ -5,8 +5,8 @@ export default function Bio_section () {
         <div style={{ backgroundColor: "#c7e3f0"}}>
             <div className="md:flex justify-evenly py-4" >
                 <div className="mt-12 py-12 md:py-36 text-center">
-                    <Typography variant={"h1"}>RYOGA MORI</Typography>
-                    <Typography variant={"h2"}>Software Engineer</Typography>
+                    <h1 className={"text-6xl md:text-8xl"}>RYOGA MORI</h1>
+                    <h2 className={"text-4xl md:text-6xl"}>Software Engineer</h2>
                 </div>
                 <div className="md:py-36 px-16 flex justify-center" >
                     <Avatar className={"animate-slow-bounce shadow-2xl"} src={"/mypic/E19530FE-44EA-49D8-B974-EB5F5A2D2DC1.JPG"}

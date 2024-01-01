@@ -41,15 +41,17 @@ export default function Home() {
                 <History />
             </div>
             <div className={"py-6 flex justify-center"} style={{ backgroundColor: "#042959" }}>
-                <Typography variant={"body1"} className={"mx-12 md:w-1/2"} style={{ color: "white"}}>
-                    Thank you for visiting My website! This web site wes build by Next.js with Material UI.It's been a
-                    journey of passion and creativity, and I'm thrilled to share it with you.
+                <div className={"mx-12 md:w-1/2"}>
+                    <Typography variant={"body1"}  style={{ color: "white"}}>
+                        Thank you for visiting My website! This web site wes build by Next.js with Material UI.It's been a
+                        journey of passion and creativity, and I'm thrilled to share it with you.
 
-                    you have any thoughts or questions, feel free to reach out. I'm always open to discussions,
-                    collaborations, or just a good creative chat.
+                        you have any thoughts or questions, feel free to reach out. I'm always open to discussions,
+                        collaborations, or just a good creative chat.
 
-                    Best wishes and keep creating!
-                </Typography>
+                        Best wishes and keep creating!
+                    </Typography>
+                </div>
             </div>
             <Contact />
             <Footer/>

@@ -10,7 +10,7 @@ import {
     CircularProgress,
     Divider,
     Grid,
-    Typography
+    Typography, useTheme
 } from "@mui/material";
 import {useEffect, useState} from "react";
 import {getDocs, doc, collection} from "firebase/firestore"
@@ -21,6 +21,7 @@ import Link from "next/link";
 import {useFirebaseData} from "@/app/provider/firebase_provider";
 
 export const Work = () =>  {
+    const theme = useTheme()
 
         const dataList = useFirebaseData()
 
@@ -34,29 +35,37 @@ export const Work = () =>  {
 
     return (
         <div id={"project"} className="py-12" style={{ backgroundColor: "#2c7ce6"}}>
-            <Divider className={"mx-3 md:mx-20 mb-8"} >
-                <Typography className={"text-3xl md:text-5xl"}>My Projects</Typography>
-            </Divider>
-            <Grid container spacing={3} justifyContent={"center"}>
+                <h2 className={"h-24 text-3xl md:text-5xl px-3 pb-8 text-center"}>My Projects</h2>
+            <Grid container spacing={3} justifyContent={"center"} >
                 {dataList && dataList.map((data, index) => (
-                    <Grid item key={index} className={"mx-6 md:mx-0"}>
-                        <CardActionArea>
-                            <Link href={"/works/" + data.id}>
-                            <Card sx={{maxWidth: 345, height: 350}} className={""} style={{ backgroundColor: "#042959"}}>
-                                <CardMedia className={"object-fill h-52 w-full"} component={"img"} image={data.picture}
-                                           title={data.title}/>
-                                <CardContent >
-                                    <h4 className={"font-bold text-xl title-limit"} style={{ color: "white"}}>{data.title}</h4>
-                                    <p className={"text-limit "}  style={{ color: "white"}}>{data.description}</p>
-                                </CardContent>
-                            </Card>
-                            </Link>
-                        </CardActionArea>
-                    </Grid>
+                        <Grid item key={index} >
+                            <CardActionArea >
+                                <Link href={"/works/" + data.id}>
+                                    <Card sx={{[theme.breakpoints.up('md')]:{maxWidth: 345}, maxWidth: 325, height: 350, backgroundColor: "#042959",transition: "transform 0.3s ease-in-out",
+                                        '&:hover': {
+                                            transform: "scale(1.05)"
+                                        }}}>
+                                        <CardMedia className={"object-fill h-52 w-full"} component={"img"} image={data.picture}
+                                                   title={data.title}/>
+                                        <CardContent >
+                                            <h4 className={"font-bold text-xl title-limit"} style={{ color: "white"}}>{data.title}</h4>
+                                            <p className={"text-limit "}  style={{ color: "white"}}>{data.description}</p>
+                                        </CardContent>
+                                    </Card>
+                                </Link>
+                            </CardActionArea>
+                        </Grid>
                 ))}
             </Grid>
             <style jsx>
                 {`
+                  .card-action{
+                    transition: transform 0.3s;
+                  }
+                  .card-action:hover{
+                    transform: scale(1.2);
+                  }
+                  
                   .title-limit{
                     overflow: hidden;
                     display: -webkit-box;
