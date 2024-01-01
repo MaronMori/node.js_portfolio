@@ -6,7 +6,7 @@ export const Skills = () => {
     "SEO"]
 
     return (
-            <Paper className={"mb:h-56 flex"} elevation={4} style={{ backgroundColor: "#c7e3f0" }}>
+            <Paper className={"md:h-72 lg:h-52 flex"} elevation={4} style={{ backgroundColor: "#c7e3f0" }}>
                 <div className={"p-4"}>
                     <Typography variant={"h5"} className={"pl-8"}>Skills</Typography>
                     <div className={"flex flex-wrap w-full"}>

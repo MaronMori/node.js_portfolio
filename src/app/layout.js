@@ -4,6 +4,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './globals.css'
 import { ReCaptchaProvider } from "next-recaptcha-v3";
+import {FirebaseProvider} from "@/app/provider/firebase_provider";
 
 
 export const metadata = {
@@ -16,7 +17,9 @@ export default function RootLayout({children}) {
       <html lang="en">
         <body>
         <ReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}>
-            {children}
+            <FirebaseProvider>
+                {children}
+            </FirebaseProvider>
         </ReCaptchaProvider>
         </body>
       </html>

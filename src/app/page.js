@@ -6,20 +6,34 @@ import {Work} from "@/components/Work";
 import {Awards} from "@/components/award_section/awards";
 import {Skill_and_contact} from "@/components/skill_and_contact/skill_and_contact";
 import {Footer} from "@/components/footer";
-import {HeaderMenu} from "@/components/menu_header";
+import {HeaderMenu} from "@/components/menu_header/menu_header";
 import {Button, Divider, Typography} from "@mui/material";
 import {useRouter} from "next/navigation";
 import {Skills} from "@/components/skills/skills";
 import {History} from "@/components/history/history";
 import {Contact} from "@/components/contact/contact";
+import {useEffect} from "react";
+import {options} from "@/components/menu_header/header_options";
 
 export default function Home() {
     const router = useRouter()
 
 
+    useEffect(() => {
+        const hash = window.location.hash;
+        if(hash){
+            const element = document.querySelector(hash);
+            if (element){
+                element.scrollIntoView({behavior: "smooth"})
+            }
+        }
+
+    }, []);
+
+
   return (
         <main className="main" id={"home"}>
-            <HeaderMenu />
+            <HeaderMenu options={options}/>
             <Bio_section />
             <Work/>
             <div id={"background"} className={"md:flex space-y-3 md:space-y-0 md:space-x-3 py-8 px-8 "} style={{ backgroundColor: "#0A4DA6" }}>
