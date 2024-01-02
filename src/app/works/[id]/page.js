@@ -24,18 +24,18 @@ export default function Work_page({params}) {
     return (
         <main>
             <HeaderMenu options={options}/>
-            <div className={"py-12 px-8 md:px-52"}>
-                <Typography className={"pt-4 text-3xl md:text-6xl"}>{data[0].title}</Typography>
+            <div className={"py-12 px-8 md:px-52 bg-[#F5F6F7]"}>
+                <h1 className={"pt-4 text-3xl md:text-6xl"}>{data[0].title}</h1>
                 <div className={"flex justify-center pt-6"}>
-                    <img src={data[0].picture} alt={"project picture"} className={"h-80 shadow-2xl"}/>
+                    <img src={data[0].picture} alt={"project picture"} className={"h-50 md:h-80 shadow-2xl"}/>
                 </div>
-                <Typography className={"pt-4 text-2xl md:text-4xl"}>Detail</Typography>
-                <Typography variant={"body1"}>{data[0].description}</Typography>
-                <Typography className={"pt-4 text-2xl md:text-4xl"}>Skills</Typography>
-                <List className={"flex w-44 space-x-2"}>
-                    {data[0].skills.map((skill) => <ListItem className={"bg-cyan-200 rounded-2xl py-1"}>{skill}</ListItem>)}
-                </List>
-                <div className={"flex justify-center space-x-2 pt-4"}>
+                <h2 className={"py-4 text-2xl md:text-4xl"}>Detail</h2>
+                <p>{data[0].description}</p>
+                <h2 className={"py-4 text-2xl md:text-4xl"}>Skills</h2>
+                <ul className={"flex flex-wrap justify-between"}>
+                    {data[0].skills.map((skill, index) => <li key={index} className={"bg-cyan-200 rounded-2xl mt-2 mr-2.4 py-1 px-2 shadow-lg"}>{skill}</li>)}
+                </ul>
+                <div className={"flex justify-center space-x-2 mt-4 py-4"}>
                     <Link href={data[0].github}>
                         <Button variant={"contained"} className={"w-24 h-12"}>
                             <GitHubIcon />
@@ -44,7 +44,7 @@ export default function Work_page({params}) {
                     {data[0].link &&
                     <Link href={data[0].link}>
                         <Button  variant={"contained"} className={"w-24 h-12"}>
-                            Go to Website
+                            Link
                         </Button>
                     </Link>
                     }

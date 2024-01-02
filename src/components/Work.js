@@ -35,7 +35,7 @@ export const Work = () =>  {
 
     return (
         <div id={"project"} className="py-12" style={{ backgroundColor: "#2c7ce6"}}>
-                <h2 className={"h-24 text-3xl md:text-5xl px-3 pb-8 text-center"}>My Projects</h2>
+                <h2 className={"h-20 text-3xl md:text-5xl px-3 pb-8 text-center"}>My Projects</h2>
             <Grid container spacing={3} justifyContent={"center"} >
                 {dataList && dataList.map((data, index) => (
                         <Grid item key={index} >
@@ -45,8 +45,8 @@ export const Work = () =>  {
                                         '&:hover': {
                                             transform: "scale(1.05)"
                                         }}}>
-                                        <CardMedia className={"object-fill h-52 w-full"} component={"img"} image={data.picture}
-                                                   title={data.title}/>
+                                        <img className={"object-fill h-52 w-full"} src={data.picture}
+                                                   alt={data.title}/>
                                         <CardContent >
                                             <h4 className={"font-bold text-xl title-limit"} style={{ color: "white"}}>{data.title}</h4>
                                             <p className={"text-limit "}  style={{ color: "white"}}>{data.description}</p>

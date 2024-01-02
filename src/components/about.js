@@ -10,10 +10,13 @@ export default function Bio_section () {
                 </div>
                 <div className="md:py-36 px-16 flex justify-center" >
                     <Avatar className={"animate-slow-bounce shadow-2xl"} src={"/mypic/E19530FE-44EA-49D8-B974-EB5F5A2D2DC1.JPG"}
-                            sx={{ width: 350, height: 350 }} alt={"My Pic"}/>
+                            sx={{ width: 350, height: 350,'@media (max-width: 600px)': {
+                                    width: 250, // 例えば200pxに
+                                    height: 250
+                                } }} alt={"My Pic"}/>
                 </div>
             </div>
-            <div className={"mt-2 flex flex-col-reverse md:grid grid-cols-2 space-x-6 mx-8 pb-4"}>
+            <div className={" flex flex-col-reverse md:grid grid-cols-2 space-x-6 mx-8 pb-4"}>
                 <div>
                     <List >
                         <ListItem key={"birthDay"} className={"space-x-3 md:space-x-6"} divider={true} >
